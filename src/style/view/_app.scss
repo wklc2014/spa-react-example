@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.appWraper {
+    background-color: #fff;
+    padding: 20px;
+    button {
+        border: 1px solid #ddd;
+        background-color: #eee;
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 4px;
+        outline: none;
+    }
+    .box {
+        margin-bottom: 16px;
+    }
+    .thunder {
+        width: 150px;
+        height: 150px;
+        // background: url("../../img/01.jpg") no-repeat;
+    }
+}

@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import "view/app.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.mb16 {
+    margin-bottom: 16px;
+}
+
+.mr16 {
+    margin-right: 16px;
+}

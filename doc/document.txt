@@ -3,8 +3,12 @@ npm init
 npm i --save-dev
 webpack webpack-dev-server
 
-babel-core babel-loader
+babel-core
 babel-preset-es2015 babel-preset-react
+
+babel-loader
+style-loader css-loader sass-loader
+url-loader
 
 html-webpack-plugin
 
