@@ -12,7 +12,7 @@ class App extends Component {
         const {width, height} = this.state;
         return (
             <div>
-                this is App component
+                this is App component 123
             </div>
         )
     }
