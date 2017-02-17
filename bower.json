@@ -1,0 +1,20 @@
+{
+  "name": "spa-react",
+  "description": "a template for spa use react",
+  "main": "index.js",
+  "authors": [
+    "wangkun"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
