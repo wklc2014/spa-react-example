@@ -1,60 +1,40 @@
 'use strict';
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
-import picJPG from '../img/pic.jpg';
+import NavLink from './common/NavLink.jsx';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            width: 100,
-            height: 100
-        }
-    }
-    handleClick(type) {
-        let {width, height} = this.state;
-        if (type === '+') {
-            width += 10;
-            height += 10;
-        } else if (type === '-') {
-            width -= 10;
-            height -= 10;
-        }
-        this.setState({
-            width,
-            height
-        })
-    }
     render() {
-        const {width, height} = this.state;
+        const {counter} = this.props;
         return (
-            <div className="appWraper">
-                <h2 className="mb16">this is App component</h2>
-                <div className="mb16">
-                    <button
-                        className="mr16"
-                        onClick={this.handleClick.bind(this, '+')}
-                    >
-                        +
-                    </button>
-                    <button
-                        onClick={this.handleClick.bind(this, '-')}
-                    >
-                        -
-                    </button>
+            <section>
+                <div className="appHeader">
+                    <h3 className="title">
+                        this is top header
+                        <span className="colorRed">
+                            {counter}
+                        </span>
+                    </h3>
+                    <nav className="nav">
+                        <ul>
+                            <li>
+                                <NavLink to="/" isHome>
+                                    首页
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/counter">
+                                    计数器
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div className="box">
-                    <img
-                        src={picJPG}
-                        width={width}
-                        height={height}
-                        alt="123"
-                    />
+                <div>
+                    {this.props.children}
                 </div>
-                <div className="box">
-                    <div className="thunder"></div>
-                </div>
-            </div>
+            </section>
         )
     }
 }

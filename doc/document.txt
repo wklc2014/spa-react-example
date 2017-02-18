@@ -1,19 +1,33 @@
 npm init
 1. install
 npm i --save-dev
-webpack webpack-dev-server
-
+webpack
+webpack-dev-server
 babel-core
-babel-preset-es2015 babel-preset-react
-
+babel-preset-es2015
+babel-preset-react
 babel-loader
-style-loader css-loader sass-loader
+style-loader
+css-loader
+sass-loader
 url-loader
-
 html-webpack-plugin
-
 rimraf
 cross-env
+node-sass
+keymirror
+babel-preset-stage-2
 
 npm i --save
-react react-dom
+react
+react-dom
+redux
+react-redux
+react-router
+redux-thunk
+
+run:
+./node_modules/.bin/
+
+webpack-dev-server:
+webpack-dev-server --devtool eval-sourcemap --hot --inline --content-base dist

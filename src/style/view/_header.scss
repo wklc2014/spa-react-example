@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.appHeader {
+    background-color: #fff;
+    .title {
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        font-size: 30px;
+        border-bottom: 1px solid #ddd;
+    }
+    .nav {
+        border-bottom: 1px solid #ddd;
+        ul {
+            &:before,
+            &:after {
+                display: table;
+                content: '';
+                width: 0;
+                height: 0;
+            }
+            &:after{
+                clear: both;
+            }
+        }
+        li {
+            float: left;
+            a {
+                line-height: 2;
+                padding: 8px 32px;
+                color: #f90;
+                display: inline-block;
+                &:hover {
+                    color: #09f;
+                    background-color: #ddd;
+                }
+            }
+        }
+    }
+}

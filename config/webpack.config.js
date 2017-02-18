@@ -2,6 +2,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var node_modules_dir = path.join('./', 'node_modules');
 
 var {NODE_ENV} = process.env;
 
@@ -10,13 +11,17 @@ var config = {
         index: path.resolve('./', 'src/entry/index.js')
     },
     output: {
-        path: path.resolve('./', 'dist/js'),
+        path: path.resolve('./', 'dist'),
         filename: '[name].js',
     },
     module: {
         loaders: [{
             test: /\.js|.jsx?$/,
+            exclude: node_modules_dir,
             loader: 'babel-loader'
+        }, {
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
         }, {
             test: /\.scss$/,
             loader: 'style-loader!css-loader!sass-loader'
@@ -40,7 +45,7 @@ var config = {
 if (NODE_ENV === 'production') {
 
 } else {
-    config
+    // config['devtool'] = 'eval-sourcemap';
 }
 
 module.exports = config;
