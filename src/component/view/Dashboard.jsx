@@ -38,7 +38,7 @@ class Dashboard extends Component {
         return (
             <div className="appWraper">
                 <h2 className="mb16">
-                    this is App component
+                    this is Dashboard component.
                 </h2>
                 <div className="mb16">
                     <input
@@ -59,11 +59,6 @@ class Dashboard extends Component {
                         onClick={this.handleClick.bind(this, '-')}
                     >
                         -
-                    </button>
-                    <button
-                        onClick={this.handleChange.bind(this)}
-                    >
-                        change Add
                     </button>
                 </div>
                 <div className="box">

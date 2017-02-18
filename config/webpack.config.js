@@ -1,10 +1,12 @@
 'use strict';
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 var path = require('path');
 var node_modules_dir = path.join('./', 'node_modules');
 
-var {NODE_ENV} = process.env;
+var __ENV__ = require('./env.js');
 
 var config = {
     entry: {
@@ -21,10 +23,13 @@ var config = {
             loader: 'babel-loader'
         }, {
             test: /\.css$/,
-            loader: "style-loader!css-loader"
+            loader: ExtractTextPlugin.extract('style-loader!css-loader')
         }, {
             test: /\.scss$/,
-            loader: 'style-loader!css-loader!sass-loader'
+            loader: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: ['css-loader', 'postcss-loader', 'sass-loader']
+            })
         }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=25000'
@@ -37,15 +42,24 @@ var config = {
         new HtmlWebpackPlugin({
             title: 'spa-react',
             template: path.resolve('./', 'src/entry/index.html'),
-            inject: false
+        }),
+        new webpack.DefinePlugin(__ENV__),
+        new ExtractTextPlugin('[name].css'),
+        new webpack.NoErrorsPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [
+                    autoprefixer({
+                        browsers: ['> 0.01%']
+                    })
+                ]
+            }
         })
     ]
 }
 
-if (NODE_ENV === 'production') {
-
-} else {
-    // config['devtool'] = 'eval-sourcemap';
+if (__ENV__.__DEV__) {
+    config.devtool = 'eval-sourcemap';
 }
 
 module.exports = config;

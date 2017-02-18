@@ -4,7 +4,8 @@ import App from './App.jsx';
 
 function mapStateToProps(state) {
     return {
-        counter: state.counter.data
+        counter: state.counter.data,
+        routing: state.routing
     }
 }
 
