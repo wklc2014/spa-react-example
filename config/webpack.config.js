@@ -1,25 +1,29 @@
 'use strict';
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer');
 var path = require('path');
 var node_modules_dir = path.join('./', 'node_modules');
-
-var __ENV__ = require('./env.js');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var __PLUGINS__ = require('./plugins.js');
+var __VENDOR__ = require('./vendor.js');
 
 var config = {
     entry: {
-        index: path.resolve('./', 'src/entry/index.js')
+        vendor: __VENDOR__,
+        index: [path.resolve('./', 'src/entry/index.js')]
     },
     output: {
         path: path.resolve('./', 'dist'),
-        filename: '[name].js',
+        filename: '[name].[chunkHash:8].js',
+        publicPath: '',
+        chunkFilename: "[name].[chunkHash:8].js",
     },
     module: {
         loaders: [{
             test: /\.js|.jsx?$/,
             exclude: node_modules_dir,
+            include: [
+                path.resolve('./', 'src'),
+            ],
             loader: 'babel-loader'
         }, {
             test: /\.css$/,
@@ -38,28 +42,7 @@ var config = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'spa-react',
-            template: path.resolve('./', 'src/entry/index.html'),
-        }),
-        new webpack.DefinePlugin(__ENV__),
-        new ExtractTextPlugin('[name].css'),
-        new webpack.NoErrorsPlugin(),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [
-                    autoprefixer({
-                        browsers: ['> 0.01%']
-                    })
-                ]
-            }
-        })
-    ]
-}
-
-if (__ENV__.__DEV__) {
-    config.devtool = 'eval-sourcemap';
+    plugins: __PLUGINS__
 }
 
 module.exports = config;

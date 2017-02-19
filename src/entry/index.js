@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 
 import store from '../redux/store';
 
+import '../../bower_components/stanimirdim92/ajaxify/src/ajaxify.js';
+
 import {Router, hashHistory, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 const history = syncHistoryWithStore(hashHistory, store);

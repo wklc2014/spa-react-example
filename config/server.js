@@ -3,9 +3,10 @@ var WebpackDevServer = require("webpack-dev-server");
 var webpack = require("webpack");
 var webpackConfig = require('./webpack.config.js');
 var __SETUP__ = require('./setup.js');
-var __ENV__ = require('./env.js');
 
-var compiler = webpack(webpackConfig);
+var compiler = webpack(Object.assign({}, webpackConfig, {
+    devtool: 'eval-sourcemap'
+}));
 var __PORT__ = 8080;
 
 var server = new WebpackDevServer(compiler, {
@@ -13,7 +14,8 @@ var server = new WebpackDevServer(compiler, {
     hot: true,
     inline: true,
     setup: __SETUP__,
-    port: __PORT__
+    port: __PORT__,
+    open: true
 })
 
 
