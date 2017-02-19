@@ -1,6 +1,5 @@
 'use strict';
 module.exports = [
-    'antd',
     'react',
     'react-dom',
     'react-redux',

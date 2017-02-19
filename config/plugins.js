@@ -13,7 +13,7 @@ var plugins = [
         favicon: path.resolve('./', 'src/img/favicon.ico')
     }),
     new webpack.DefinePlugin(__ENV__),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].[chunkHash].css'),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
         options: {
@@ -23,8 +23,7 @@ var plugins = [
                 })
             ]
         }
-    }),
-
+    })
 ];
 
 if (__ENV__.__DEV__) {
