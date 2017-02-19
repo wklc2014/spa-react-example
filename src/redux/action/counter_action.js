@@ -3,7 +3,7 @@ import actionType from '../actionType';
 const {
     COUNTER_INCREMENT,
     COUNTER_DECREMENT,
-    COUNTER_ADD
+    COUNTER_ADD,
 } = actionType;
 
 // 导出加一的方法

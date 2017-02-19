@@ -13,9 +13,9 @@ var config = {
     },
     output: {
         path: path.resolve('./', 'dist'),
-        filename: '[name].[chunkHash:8].js',
+        filename: '[name].[chunkHash].js',
         publicPath: '',
-        chunkFilename: "[name].[chunkHash:8].js",
+        chunkFilename: "[name].[chunkHash].js",
     },
     module: {
         loaders: [{

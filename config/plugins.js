@@ -24,9 +24,26 @@ var plugins = [
             ]
         }
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-        names: ['vendor', 'manifest'],
-    })
+
 ];
+
+if (__ENV__.__DEV__) {
+    plugins.push(
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'manifest'],
+        })
+    )
+} else if (__ENV__.__PROD__) {
+    plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false, // remove all comments
+            },
+            compress: {
+                warnings: false
+            }
+        })
+    )
+}
 
 module.exports = plugins;
