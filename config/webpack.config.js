@@ -14,9 +14,9 @@ var config = {
     },
     output: {
         path: path.resolve('./', 'dist'),
-        filename: '[name].[chunkHash].js',
+        filename: '[name].[hash].js',
         publicPath: '',
-        chunkFilename: "[name].[chunkHash].js",
+        chunkFilename: "[name].[hash].js",
     },
     module: {
         loaders: [{
@@ -41,7 +41,7 @@ var config = {
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new ExtractTextPlugin('[name].[chunkHash].css'),
+        new ExtractTextPlugin('[name].[hash].css'),
         new webpack.DefinePlugin(__ENV__),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.LoaderOptionsPlugin({

@@ -2,11 +2,18 @@
  * mock ajax 数据
  */
 'use strict';
-var login = require('./mock/login.js');
+
+var mock = require('./mock');
 
 module.exports = function(app) {
-    // Here you can access the Express app object
-    // and add your own custom middleware to it.
-    // For example, to define custom handlers for some paths:
-    app.get('/assess/login', login);
+    app.all('*', function(req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        next();
+    });
+    Object.keys(mock).forEach(v => {
+        var curr = mock[v];
+        if (curr.status) {
+            app.get(curr.api, curr.content);
+        }
+    })
 }
