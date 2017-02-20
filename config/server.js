@@ -12,13 +12,7 @@ var server = new WebpackDevServer(webpack(webpackConfig), {
     hot: true,
     inline: true,
     setup: __SETUP__,
-    port: 8080,
-    proxy: {
-        '/*': {
-            target: 'https://localhost:8081',
-            secure: false
-        }
-    }
+    port: 8080
 })
 
 server.listen(8080, "localhost", function() {
