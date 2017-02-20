@@ -13,7 +13,7 @@ class Counter extends Component {
         return (
             <div className="appWraper">
                 <h2 className="mb16">
-                    this is Counter component
+                    this is Counter component 123
                 </h2>
                 <div className="mb16">
                     <button

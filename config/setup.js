@@ -1,3 +1,7 @@
+/**
+ * mock ajax 数据
+ */
+
 'use strict';
 
 module.exports = function(app) {

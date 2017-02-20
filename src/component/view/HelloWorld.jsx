@@ -1,20 +1,11 @@
 'use strict';
 import React, {Component} from 'react';
+import funcLogin from '../../service/login.js';
 
 class HelloWorld extends Component {
     handleClick() {
-        ajaxify.ajax({
-            url: '/assess/login',
-            method: 'get',
-            data: {
-                username: 'wangkun',
-                password: '123456'
-            }
-        }).done(function (response, headers, XHR) {
-            console.log(response);
-            console.log(headers);
-            console.log(XHR);
-        });
+        funcLogin();
+        console.log(1233, 'aaaa')
     }
     render() {
         return (

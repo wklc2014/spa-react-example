@@ -19,7 +19,9 @@ file-loader
 postcss-loader
 
 html-webpack-plugin
+html-webpack-include-assets-plugin
 extract-text-webpack-plugin@beta
+copy-webpack-plugin
 autoprefixer
 rimraf
 cross-env

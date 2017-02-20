@@ -4,6 +4,7 @@
       "react",
       "stage-2"
     ],
+    "compact" : true,
     "plugins": [
         [
             "import", {

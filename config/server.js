@@ -1,16 +1,16 @@
+/**
+ * 启动开发环境服务器
+ */
 'use strict';
 var WebpackDevServer = require("webpack-dev-server");
 var webpack = require("webpack");
 var webpackConfig = require('./webpack.config.js');
 var __SETUP__ = require('./setup.js');
 
-var compiler = webpack(Object.assign({}, webpackConfig, {
-    devtool: 'eval-sourcemap'
-}));
 var __PORT__ = 8080;
 
-var server = new WebpackDevServer(compiler, {
-    contentBase: '/dist',
+var server = new WebpackDevServer(webpack(webpackConfig), {
+    contentBase: 'dist',
     hot: true,
     inline: true,
     setup: __SETUP__,
@@ -18,7 +18,6 @@ var server = new WebpackDevServer(compiler, {
     open: true
 })
 
-
 server.listen(__PORT__, "localhost", function() {
-    console.log('SERVER is run', 'http://localhost:' + __PORT__);
+    console.log('SERVER is running at', 'http://localhost:' + __PORT__);
 });
