@@ -54,7 +54,7 @@ var config = {
             }
         })
     ]
-}
+};
 
 if (__ENV__.__DEV__) {
     config.devtool = 'eval-source-map';

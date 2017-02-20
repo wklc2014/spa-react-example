@@ -7,17 +7,20 @@ var webpack = require("webpack");
 var webpackConfig = require('./webpack.config.js');
 var __SETUP__ = require('./setup.js');
 
-var __PORT__ = 8080;
-
 var server = new WebpackDevServer(webpack(webpackConfig), {
     contentBase: 'dist',
     hot: true,
     inline: true,
     setup: __SETUP__,
-    port: __PORT__,
-    open: true
+    port: 8080,
+    proxy: {
+        '/*': {
+            target: 'https://localhost:8081',
+            secure: false
+        }
+    }
 })
 
-server.listen(__PORT__, "localhost", function() {
-    console.log('SERVER is running at', 'http://localhost:' + __PORT__);
+server.listen(8080, "localhost", function() {
+    console.log('SERVER is running at', 'http://localhost:8080');
 });
