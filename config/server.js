@@ -8,11 +8,16 @@ var webpackConfig = require('./webpack.config.js');
 var __SETUP__ = require('./setup.js');
 
 var server = new WebpackDevServer(webpack(webpackConfig), {
-    contentBase: 'dist',
+    contentBase: 'dist/',
     hot: true,
     inline: true,
     setup: __SETUP__,
-    port: 8080
+    port: 8080,
+    stats: {
+        chunks: false,
+        children: false,
+        colors: true
+    }
 })
 
 server.listen(8080, "localhost", function() {

@@ -28,4 +28,9 @@ module.exports = {
             context: __dirname,
         })
     ],
+    stats: {
+        cached: true,
+        chunks: false,
+        colors: true
+    }
 };

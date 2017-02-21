@@ -1,6 +1,5 @@
 'use strict';
 function login(req, res) {
-    var a = 1;
     res.json({
         custom: 'response',
         stat: 'ok'
@@ -8,4 +7,3 @@ function login(req, res) {
 }
 
 module.exports = login;
-

@@ -38,7 +38,7 @@ class Dashboard extends Component {
         return (
             <div className="appWraper">
                 <h2 className="mb16">
-                    this is Dashboard component.
+                    this is Dashboard component. dd
                 </h2>
                 <div className="mb16">
                     <input
