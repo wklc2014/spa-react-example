@@ -1,6 +1,6 @@
 'use strict';
 
-var login = require('./mock/login.js');
+var login = require('./login.js');
 
 var config = {
     login: {

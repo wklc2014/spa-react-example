@@ -7,6 +7,12 @@ var webpack = require("webpack");
 var webpackConfig = require('./webpack.config.js');
 var __SETUP__ = require('./setup.js');
 
+// modify some webpack config options
+webpackConfig.entry.index.unshift(
+    "webpack-dev-server/client?http://localhost:8080/",
+    "webpack/hot/dev-server"
+);
+var myConfig = Object.create(webpackConfig);
 var server = new WebpackDevServer(webpack(webpackConfig), {
     contentBase: 'dist/',
     hot: true,
@@ -17,7 +23,8 @@ var server = new WebpackDevServer(webpack(webpackConfig), {
         chunks: false,
         children: false,
         colors: true
-    }
+    },
+    historyApiFallback: true
 })
 
 server.listen(8080, "localhost", function() {

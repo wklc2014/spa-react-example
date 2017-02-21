@@ -10,6 +10,7 @@ module.exports = function(app) {
         res.header('Access-Control-Allow-Origin', '*');
         next();
     });
+
     Object.keys(mock).forEach(v => {
         var curr = mock[v];
         if (curr.status) {

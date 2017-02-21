@@ -10,7 +10,7 @@ var __ENV__ = require('./env.js');
 
 var config = {
     entry: {
-        index: path.resolve('./', 'src/entry/index.js')
+        index: [path.resolve('./', 'src/entry/index.js')]
     },
     output: {
         path: path.resolve('./', 'dist'),
@@ -71,7 +71,8 @@ if (__ENV__.__DEV__) {
         new HtmlWebpackIncludeAssetsPlugin({
             assets: ['vendor.dll.js'],
             append: false
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     );
 } else if (__ENV__.__PROD__) {
     config.plugins.push(
