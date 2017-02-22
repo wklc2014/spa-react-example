@@ -5,6 +5,7 @@ var node_modules_dir = path.join('./', 'node_modules');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+var OpenBrowserPlugin = require("open-browser-webpack-plugin");
 var autoprefixer = require('autoprefixer');
 var __ENV__ = require('./env.js');
 
@@ -72,6 +73,9 @@ if (__ENV__.__DEV__) {
             assets: ['vendor.dll.js'],
             append: false
         }),
+        // new OpenBrowserPlugin({
+        //     url: 'http://localhost:8080'
+        // }),
         new webpack.HotModuleReplacementPlugin()
     );
 } else if (__ENV__.__PROD__) {

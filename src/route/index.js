@@ -8,13 +8,13 @@ import Counter from '../component/view/CounterContainer.jsx';
 import HelloWorld from '../component/view/HelloWorld.jsx';
 
 function route(history, store) {
-    const validate = function (nextState, replaceState, callback) {
+    const validate = (nextState, replaceState, callback) => {
         // 需要做权限控制的时候开启
         // const isLoggedIn = !!store.getState().auth.authenticated
         // if (!isLoggedIn) {
         //   replaceState(null, '/login')
         // }
-        callback()
+        callback();
       }
     return (
         <Router history={history} onEnter={validate}>
