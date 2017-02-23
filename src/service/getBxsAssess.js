@@ -1,8 +1,9 @@
 'use strict';
 import qwest from 'qwest';
+import __API__ from './index.js';
 
 export default function funcGetBxsAssess() {
-    qwest.get('/assess/getBxAssess.json')
+    qwest.get(__API__.assess)
         .then(function(xhr, response) {
             console.log('success', response)
         })

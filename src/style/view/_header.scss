@@ -24,12 +24,14 @@
             }
         }
         li {
+            width: 200px;
             float: left;
             a {
                 line-height: 2;
-                padding: 8px 32px;
                 color: #f90;
-                display: inline-block;
+                display: block;
+                text-align: center;
+                padding: 8px 32px;
                 &:hover {
                     color: #09f;
                     background-color: #ddd;

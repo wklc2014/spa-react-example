@@ -1,5 +1,5 @@
 'use strict';
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import middleware from '../middleware';
 import reducer from '../reducer';
 

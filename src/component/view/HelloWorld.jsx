@@ -1,15 +1,15 @@
 'use strict';
 import React, {Component} from 'react';
-import funcLogin from '../../service/login.js';
-import funcGetBxsAssess from '../../service/getBxsAssess.js';
+import login from '../../service/login.js';
+import getBxsAssess from '../../service/getBxsAssess.js';
 
 class HelloWorld extends Component {
     handleClick() {
-        funcLogin();
+        login();
         console.log(1233, 'aaaa')
     }
     handleUpdate() {
-        funcGetBxsAssess();
+        getBxsAssess();
         console.log(1233, 'bbbb')
     }
     render() {

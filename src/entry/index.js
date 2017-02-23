@@ -14,6 +14,8 @@ import '../style/index.scss';
 import route from '../route';
 const oApp = document.getElementById('app');
 
+import '../mock';
+
 render((
     <Provider store={store}>
         <Router history={history} routes={route(store)} />

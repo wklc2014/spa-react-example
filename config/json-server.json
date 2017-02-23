@@ -1,8 +1,0 @@
-{
-    "host": "localhost",
-    "port": 8081,
-    "watch": true,
-    "delay": 500,
-    "quiet": true,
-    "routes": "./config/routes.json"
-}

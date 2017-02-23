@@ -7,10 +7,12 @@ var webpack = require("webpack");
 var webpackConfig = require('./webpack.config.js');
 
 // modify some webpack config options
+// 无法自动更新 css
 // webpackConfig.entry.index.unshift(
 //     "webpack-dev-server/client?http://localhost:8080/",
 //     "webpack/hot/dev-server"
 // );
+
 var myConfig = Object.create(webpackConfig);
 var server = new WebpackDevServer(webpack(webpackConfig), {
     contentBase: 'dist/',
@@ -25,7 +27,8 @@ var server = new WebpackDevServer(webpack(webpackConfig), {
     proxy: {
         '/api/*': {
             target: 'http://localhost:8081',
-            secure: false,
+            changeOrigin: true,
+            secure: false
         }
     }
 })
