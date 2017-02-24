@@ -1,8 +1,12 @@
 'use strict';
 
-const login = {
-    custom: 'response',
-    stat: 'ok'
+function login(request) {
+    const data = {
+        custom: 'response',
+        stat: 'ok'
+    };
+
+    return [200, {}, data];
 };
 
- export default login;
+export default login;

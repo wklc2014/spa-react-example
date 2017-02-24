@@ -1,8 +1,8 @@
 'use strict';
 
-const __API__ = {
-    login: '/api/login',
-    assess: '/bxs/getBxsAssess'
+const API = {
+    LOGIN: '/login.json',
+    ASSESS: '/getBxsAssess.json'
 }
 
-export default __API__;
+export default API;

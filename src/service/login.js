@@ -1,9 +1,9 @@
 'use strict';
 import qwest from 'qwest';
-import __API__ from './index.js';
+import API from './index.js';
 
 export default function login(cb) {
-    qwest.get(__API__.login)
+    qwest.get(API.LOGIN)
         .then(function(xhr, response) {
             const resp = JSON.parse(response);
             console.log(typeof resp);

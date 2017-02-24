@@ -8,9 +8,9 @@
     "clean": "./node_modules/.bin/rimraf dist/*",
     "prod": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/webpack -p --config config/webpack.config.js",
     "dev": "./node_modules/.bin/cross-env NODE_ENV=development node ./config/server.js",
-    "dll": "./node_modules/.bin/webpack -p --config config/webpack.dll.config.js",
+    "dll": "./node_modules/.bin/webpack --config config/webpack.dll.config.js",
     "build": "npm run clean && npm run prod",
-    "start": "npm run clean && npm run dll && npm run dev"
+    "start": "npm run dll && npm run dev"
   },
   "author": "wangkun",
   "license": "ISC",
@@ -35,6 +35,7 @@
     "node-sass": "^4.5.0",
     "open-browser-webpack-plugin": "0.0.4",
     "postcss-loader": "^1.3.1",
+    "pretender": "^1.4.2",
     "rimraf": "^2.5.4",
     "sass-loader": "^6.0.1",
     "style-loader": "^0.13.1",

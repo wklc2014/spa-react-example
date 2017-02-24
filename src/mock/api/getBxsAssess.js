@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = function getBxsAssess(res) {
-    res.body = {
+function getBxsAssess(request) {
+    const data = {
         authToken: {
             username: 'admin'
         },
         stat: 'delay'
     }
-    return {
-        username: 'admin'
-    };
+    return [200, {}, data];
 }
+
+export default getBxsAssess;

@@ -4,6 +4,8 @@ import {Link} from 'react-router';
 import lodash from 'lodash';
 
 import NavLink from './common/NavLink.jsx';
+import Login from './view/Login.jsx';
+
 import {NAV_DATA} from './common/const.js';
 
 class App extends Component {
@@ -19,7 +21,12 @@ class App extends Component {
                     <NavLink {...props}>{curr.text}</NavLink>
                 </li>
             );
-        })
+        });
+
+        const loginProps = {
+            username: this.props.user.username,
+            login: this.props.login
+        }
         return (
             <section>
                 <div className="appHeader">
@@ -28,6 +35,7 @@ class App extends Component {
                         <span className="colorRed">
                             {counter}
                         </span>
+                        <Login {...loginProps} />
                     </h3>
                     <nav className="nav">
                         <ul>

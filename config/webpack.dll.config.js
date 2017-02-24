@@ -12,8 +12,14 @@ module.exports = {
             'redux-thunk',
             'react-router',
             'react-router-redux',
+            'redux-logger',
             'classnames',
-            'qwest'
+            'qwest',
+            'lodash',
+            'keymirror',
+            'mockjs',
+            'antd',
+            'pretender'
         ],
     },
     output: {

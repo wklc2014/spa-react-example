@@ -1,11 +1,12 @@
 'use strict';
 import qwest from 'qwest';
-import __API__ from './index.js';
+import API from './index.js';
 
 export default function funcGetBxsAssess() {
-    qwest.get(__API__.assess)
+    qwest.get(API.ASSESS)
         .then(function(xhr, response) {
-            console.log('success', response)
+            const resp = JSON.parse(response);
+            console.log('success', resp);
         })
         .catch(function(e, xhr, response) {
             console.log('error', e);

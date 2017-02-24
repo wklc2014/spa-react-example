@@ -1,10 +1,18 @@
 'use strict';
+import Pretender from 'pretender';
 import MockJS from 'mockjs';
-import __API__ from '../service';
-import login from './api/login.js';
-import getBxsAssess from './api/getBxsAssess.js';
 
+import API from '../service';
+import LOGIN from './api/login.js';
+import ASSESS from './api/getBxsAssess.js';
 
-MockJS.mock(__API__.login, login);
-MockJS.mock(__API__.assess, getBxsAssess);
+var server = new Pretender(function () {
+    this.get(API.LOGIN, LOGIN);
+    this.get(API.ASSESS, this.passthrough);
+});
 
+server.prepareBody = function(body) {
+    return body ? JSON.stringify(body) : '{"error": "not found"}';
+}
+
+// server.shutdown();

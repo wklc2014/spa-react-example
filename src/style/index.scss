@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "view/app.scss";
+@import "view/login.scss";
 @import "view/header.scss";
 
 * {
@@ -47,4 +48,8 @@ body {
 .navActive {
     background-color: #555 !important;
     color: #fff !important;
+}
+
+.pointer {
+    cursor: pointer;
 }

@@ -23,14 +23,7 @@ var server = new WebpackDevServer(webpack(webpackConfig), {
         children: false,
         colors: true
     },
-    historyApiFallback: true,
-    proxy: {
-        '/api/*': {
-            target: 'http://localhost:8081',
-            changeOrigin: true,
-            secure: false
-        }
-    }
+    historyApiFallback: true
 })
 
 server.listen(8080, "localhost", function() {
