@@ -10,7 +10,7 @@
     "dev": "./node_modules/.bin/cross-env NODE_ENV=development node ./config/server.js",
     "dll": "./node_modules/.bin/webpack --config config/webpack.dll.config.js",
     "build": "npm run clean && npm run prod",
-    "start": "npm run dll && npm run dev"
+    "start": "npm run clean && npm run dll && npm run dev"
   },
   "author": "wangkun",
   "license": "ISC",
