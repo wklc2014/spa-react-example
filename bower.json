@@ -6,7 +6,7 @@
     "wangkun"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/wklc2014/spa-react",
   "ignore": [
     "**/.*",
     "node_modules",

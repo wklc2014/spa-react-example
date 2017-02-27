@@ -20,13 +20,13 @@ class HelloWorld extends Component {
                 </h2>
                 <div className="box">
                     <button
-                        className="btn btn-primary mr16"
+                        className="button mr16"
                         onClick={this.handleClick.bind(this)}
                     >
                         登陆
                     </button>
                     <button
-                        className="btn btn-primary"
+                        className="button"
                         onClick={e => this.handleUpdate('abc')}
                     >
                         更新
