@@ -25,7 +25,8 @@ class App extends Component {
 
         const loginProps = {
             username: this.props.user.username,
-            login: this.props.login
+            ActionLogin: this.props.ActionLogin,
+            ActionLogout: this.props.ActionLogout
         }
         return (
             <section>

@@ -1,15 +1,15 @@
 'use strict';
 import React, {Component} from 'react';
-import login from '../../service/login.js';
-import getBxsAssess from '../../service/getBxsAssess.js';
+// import ServiceLogin from '../../service/ServiceLogin.js';
+import ServiceGetBxsAssess from '../../service/ServiceGetBxsAssess.js';
 
 class HelloWorld extends Component {
     handleClick() {
-        login();
-        console.log(1233, 'aaaa')
+        // ServiceLogin();
+        // console.log(1233, 'aaaa')
     }
-    handleUpdate() {
-        getBxsAssess();
+    handleUpdate(data) {
+        ServiceGetBxsAssess(data);
         console.log(1233, 'bbbb')
     }
     render() {
@@ -20,13 +20,14 @@ class HelloWorld extends Component {
                 </h2>
                 <div className="box">
                     <button
-                        className="mr16"
+                        className="btn btn-primary mr16"
                         onClick={this.handleClick.bind(this)}
                     >
                         登陆
                     </button>
                     <button
-                        onClick={this.handleUpdate.bind(this)}
+                        className="btn btn-primary"
+                        onClick={e => this.handleUpdate('abc')}
                     >
                         更新
                     </button>

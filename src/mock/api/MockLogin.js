@@ -2,7 +2,7 @@
 
 function login(request) {
     const data = {
-        custom: 'response',
+        username: 'abcdefg',
         stat: 'ok'
     };
 

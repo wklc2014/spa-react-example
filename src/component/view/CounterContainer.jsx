@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import Counter from './Counter.jsx';
 
 import {
-    increment,
-    decrement,
-    incrementIfOdd,
-    incrementAsync
-} from '../../redux/action/counter_action.js';
+    ActionIncrement,
+    ActionDecrement,
+    ActionIncrementIfOdd,
+    ActionIncrementAsync
+} from '../../redux/action/ActionCounter.js';
 
 function mapStateToProps(state) {
     return {
@@ -19,10 +19,10 @@ function mapStateToProps(state) {
 // 将 action 的所有方法绑定到 props 上
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        increment,
-        decrement,
-        incrementIfOdd,
-        incrementAsync
+        ActionIncrement,
+        ActionDecrement,
+        ActionIncrementIfOdd,
+        ActionIncrementAsync
     }, dispatch);
 }
 

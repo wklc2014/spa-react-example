@@ -1,12 +1,13 @@
 'use strict';
 import keyMirror from 'keymirror';
 
-const actionType = keyMirror({
+const ActionType = keyMirror({
     COUNTER_INCREMENT: null,
     COUNTER_DECREMENT: null,
     COUNTER_ADD: null,
 
-    LOGIN: null
+    LOGIN: null,
+    LOGOUT: null,
 });
 
-export default actionType;
+export default ActionType;

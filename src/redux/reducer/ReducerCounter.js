@@ -6,12 +6,12 @@ const {
     COUNTER_ADD
 } = actionType;
 
-import {counterInitState} from '../initState';
+import {StateCounter} from '../initialState';
 
 // reducer 其实也是个方法而已
 // 参数是 state 和 action
 // 返回值是新的 state
-function counter_reducer(state = counterInitState, action) {
+export default function ReducerCounter(state = StateCounter, action) {
     switch (action.type) {
         case COUNTER_INCREMENT:
             return Object.assign({}, state, {
@@ -32,5 +32,3 @@ function counter_reducer(state = counterInitState, action) {
             return state;
     }
 }
-
-export default counter_reducer;

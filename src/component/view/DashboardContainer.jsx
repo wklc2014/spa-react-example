@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import Dashboard from './Dashboard.jsx';
 
 import {
-    changeCounterAdd
-} from '../../redux/action/counter_action.js';
+    ActionChangeCounterAdd
+} from '../../redux/action/ActionCounter.js';
 
 function mapStateToProps(state) {
     return {
@@ -16,7 +16,7 @@ function mapStateToProps(state) {
 // 将 action 的所有方法绑定到 props 上
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        changeCounterAdd
+        ActionChangeCounterAdd
     }, dispatch);
 }
 

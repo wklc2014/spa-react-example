@@ -1,13 +1,13 @@
 'use strict';
 
-function getBxsAssess(request) {
+function MockGetBxsAssess(request) {
     const data = {
         authToken: {
             username: 'admin'
         },
         stat: 'delay'
     }
-    return [200, {}, data];
+    return [404, {}, data];
 }
 
-export default getBxsAssess;
+export default MockGetBxsAssess;

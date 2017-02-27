@@ -9,20 +9,25 @@ class Login extends Component {
             return (
                 <div className="loginWraper">
                     <span className="item">{username}</span>
-                    <span className="item">退出</span>
+                    <span
+                        className="item pointer"
+                        onClick={e => this.props.ActionLogout()}
+                    >
+                        退出
+                    </span>
                 </div>
-            )
+            );
         }
         return (
             <div className="loginWraper">
                 <span
                     className="item pointer"
-                    onClick={this.props.login}
+                    onClick={e => this.props.ActionLogin()}
                 >
                     登录
                 </span>
             </div>
-        )
+        );
     }
 }
 

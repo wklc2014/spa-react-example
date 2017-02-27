@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 
 import App from './App.jsx';
 
-import {login} from '../redux/action/user_action.js';
+import {
+    ActionLogin,
+    ActionLogout
+} from '../redux/action/ActionUser.js';
 
 function mapStateToProps(state) {
     return {
@@ -16,7 +19,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        login
+        ActionLogin,
+        ActionLogout
     }, dispatch);
 }
 

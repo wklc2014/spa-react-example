@@ -1,22 +1,17 @@
 'use strict';
-import actionType from '../actionType';
-const {
-    COUNTER_INCREMENT,
-    COUNTER_DECREMENT,
-    COUNTER_ADD,
-} = actionType;
+import ActionType from '../actionType';
 
 // 导出加一的方法
-export function increment() {
+export function ActionIncrement() {
     return {
-        type: COUNTER_INCREMENT
+        type: ActionType.COUNTER_INCREMENT
     }
 }
 
 // 导出减一的方法
-export function decrement() {
+export function ActionDecrement() {
     return {
-        type: COUNTER_DECREMENT
+        type: ActionType.COUNTER_DECREMENT
     }
 }
 
@@ -24,7 +19,7 @@ export function decrement() {
 // 该方法返回一个方法，包含 dispatch 和 getState 两个参数，
 // dispatch 用于执行 action 的方法，
 // getState 返回 state
-export function incrementIfOdd() {
+export function ActionIncrementIfOdd() {
     return (dispatch, getState) => {
         const { counter } = getState();
 
@@ -41,7 +36,7 @@ export function incrementIfOdd() {
 // 包含一个默认参数 delay
 // 返回一个方法
 // 一秒后加一
-export function incrementAsync(delay = 1000) {
+export function ActionIncrementAsync(delay = 1000) {
     return dispatch => {
         setTimeout(() => {
             dispatch(increment());
@@ -49,9 +44,9 @@ export function incrementAsync(delay = 1000) {
     }
 }
 
-export function changeCounterAdd(add) {
+export function ActionChangeCounterAdd(add) {
     return {
-        type: COUNTER_ADD,
+        type: ActionType.COUNTER_ADD,
         payload: add
     }
 }

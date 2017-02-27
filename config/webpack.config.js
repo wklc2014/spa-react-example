@@ -36,6 +36,12 @@ var config = {
         }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=25000'
+        }, {
+            test: require.resolve('jquery'),
+            loader: 'expose-loader?$!expose-loader?jQuery'
+        }, {
+            test: /\.(eot|ttf|woff|woff2|svg)$/,
+            loader: 'file-loader?name=fonts/[name].[ext]'
         }]
     },
     resolve: {
@@ -53,6 +59,12 @@ var config = {
                     })
                 ]
             }
+        }),
+        new webpack.ProvidePlugin({
+            '$': 'jquery',
+            'jQuery': 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
         })
     ]
 };
