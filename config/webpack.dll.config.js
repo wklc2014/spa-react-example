@@ -15,6 +15,7 @@ module.exports = {
             'redux-logger',
             'classnames',
             'qwest',
+            'axios',
             'lodash',
             'keymirror',
             'mockjs',

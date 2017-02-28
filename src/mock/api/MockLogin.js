@@ -1,12 +1,8 @@
 'use strict';
 
 function login(request) {
-    const data = {
-        username: 'abcdefg',
-        stat: 'ok'
-    };
-
-    return [200, {}, data];
+    console.log(request)
+    return [200, {}, request.queryParams];
 };
 
 export default login;

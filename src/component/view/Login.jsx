@@ -3,6 +3,12 @@
 import React, {Component} from 'react';
 
 class Login extends Component {
+    handleLogin() {
+        this.props.ActionLogin({
+            username: '魅族',
+            password: '123456'
+        });
+    }
     render() {
         const {username} = this.props;
         if (username) {
@@ -22,7 +28,7 @@ class Login extends Component {
             <div className="loginWraper">
                 <span
                     className="item pointer"
-                    onClick={e => this.props.ActionLogin()}
+                    onClick={this.handleLogin.bind(this)}
                 >
                     登录
                 </span>

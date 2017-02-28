@@ -7,7 +7,7 @@ import MockLogin from './api/MockLogin.js';
 import MockGetBxsAssess from './api/MockGetBxsAssess.js';
 
 var server = new Pretender(function () {
-    this.get(API.LOGIN, MockLogin, 2000);
+    this.get(API.LOGIN, MockLogin, 100);
     this.post(API.ASSESS, MockGetBxsAssess);
     // this.get(API.ASSESS, this.passthrough);
 });

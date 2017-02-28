@@ -49,6 +49,7 @@
   "dependencies": {
     "antd": "^2.7.2",
     "autoprefixer": "^6.7.3",
+    "axios": "^0.15.3",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "mockjs": "^1.0.1-beta3",
